@@ -1,4 +1,5 @@
 #summary How to support this project
+#labels Featured
 
 The developers of *Zaitun Time Series* use their spare time to develop *Zaitun Time Series*. And unfortunately, this project has costs that need to be covered for hardware, hosting services, domain registration, web software, and other expenses that come up for the development, maintenance, and promotion of *Zaitun Time Series*.
 
