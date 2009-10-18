@@ -76,14 +76,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Zaitun Time Series.exe" size="999424">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Zaitun Time Series.exe" size="995328">
       <assemblyIdentity name="Zaitun Time Series" version="0.1.3.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>oOILUBdHx9rauvmIcA9DMEP4c78=</dsig:DigestValue>
+        <dsig:DigestValue>7lJv45sX9f7/pw/kBDzP4bofVCw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

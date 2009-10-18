@@ -17,7 +17,7 @@
     <ManifestCertificateThumbprint>4E8CA766F89ECDDC07371ABC908090E5E8E348BF</ManifestCertificateThumbprint>
     <ManifestKeyFile>zaftime_TemporaryKey.pfx</ManifestKeyFile>
     <GenerateManifests>true</GenerateManifests>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <StartupObject>
     </StartupObject>
@@ -112,7 +112,6 @@
     <Compile Include="Data\Data on RAM\VariableComparer.cs" />
     <Compile Include="Data\Data on RAM\VariableFinder.cs" />
     <Compile Include="Data\Data Printing\SeriesDataPrinter.cs" />
-    <Compile Include="Data\Library\DoubleRange.cs" />
     <Compile Include="Decomposition\Computation\MeasuringForecastingError.cs" />
     <Compile Include="Decomposition\Computation\SeasonalIndex.cs" />
     <Compile Include="Decomposition\Views\DecompositionStorageForm.cs">
@@ -402,11 +401,6 @@
     <Compile Include="MatrixVector\Vector.cs" />
     <Compile Include="NeuralNetwork\Computation\LinearFunction.cs" />
     <Compile Include="NeuralNetwork\Computation\SemiLinearFunction.cs" />
-    <Compile Include="NumericalComputation\BaseFunction.cs" />
-    <Compile Include="NumericalComputation\Differential.cs" />
-    <Compile Include="NumericalComputation\MultinomialFunction.cs" />
-    <Compile Include="NumericalComputation\Integral.cs" />
-    <Compile Include="NumericalComputation\IOptimzationAlgorithm.cs" />
     <Compile Include="Optimization\BaseFunction.cs" />
     <Compile Include="Optimization\OptimizationAlgorithm.cs" />
     <Compile Include="Optimization\QuasiNewton.cs" />
