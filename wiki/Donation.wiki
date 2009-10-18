@@ -4,7 +4,7 @@ The developers of *Zaitun Time Series* use their spare time to develop *Zaitun T
 
 Please make donation if you find *Zaitun Time Series* is useful and if you are interested in keeping Zaitun Time Series in a position to continue its development into the future. Your donation can be sent via PayPal donation.
 
-[https://www.paypal.com/uk/cgi-bin/webscr?cmd=_flow&SESSION=CvLj6rKZpJMp5txaqEZm2kITSTNop6fgrc2qj4ecyNlmrrSitwSxvP6gLA4&dispatch=5885d80a13c0db1ffc45dc241d84e9538c532da79baccf7c26f850d773643350 https://www.paypal.com/en_US/i/scr/pixel.gif]
+[https://www.paypal.com/uk/cgi-bin/webscr?cmd=_flow&SESSION=CvLj6rKZpJMp5txaqEZm2kITSTNop6fgrc2qj4ecyNlmrrSitwSxvP6gLA4&dispatch=5885d80a13c0db1ffc45dc241d84e9538c532da79baccf7c26f850d773643350 https://www.paypal.com/en_US/i/btn/btn_donateCC_LG_global.gif]
 
 If you would like to donate by wiring money directly to an account, then please send it to our bank account in Indonesia:
  * Bank : Bank Mandiri
