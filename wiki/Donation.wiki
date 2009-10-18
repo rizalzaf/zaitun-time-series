@@ -1,0 +1,20 @@
+#summary How to support this project
+
+= Introduction =
+
+Please make donation if you find *Zaitun Time Series* is useful and if you are interested in keeping *Zaitun Time Series* in a position to continue its development into the future. Your donation can be sent via PayPal donation.
+
+
+= Details =
+
+The developers of *Zaitun Time Series* use their spare time to develop *Zaitun Time Series*. And unfortunately, this project has costs that need to be covered for hardware, hosting services, domain registration, web software, and other expenses that come up for the development, maintenance, and promotion of *Zaitun Time Series*.
+
+Please make donation if you find *Zaitun Time Series* is useful and if you are interested in keeping Zaitun Time Series in a position to continue its development into the future. Your donation can be sent via PayPal donation.
+
+If you would like to donate by wiring money directly to an account, then please send it to our bank account in Indonesia:
+Bank : Bank Mandiri
+Brach Office : KCP Pekanbaru Ahmad Yani
+Account Number : 1080007594741
+Owner of the account : Rizal Zaini Ahmad Fathony
+
+We would like to thank to you if you could make a donation.
