@@ -4,10 +4,12 @@ The developers of *Zaitun Time Series* use their spare time to develop *Zaitun T
 
 Please make donation if you find *Zaitun Time Series* is useful and if you are interested in keeping Zaitun Time Series in a position to continue its development into the future. Your donation can be sent via PayPal donation.
 
+<paypal>don</paypal>
+
 If you would like to donate by wiring money directly to an account, then please send it to our bank account in Indonesia:
-Bank : Bank Mandiri
-Brach Office : KCP Pekanbaru Ahmad Yani
-Account Number : 1080007594741
-Owner of the account : Rizal Zaini Ahmad Fathony
+ *Bank : Bank Mandiri
+ *Brach Office : KCP Pekanbaru Ahmad Yani
+ *Account Number : 1080007594741
+ *Owner of the account : Rizal Zaini Ahmad Fathony
 
 We would like to thank to you if you could make a donation.
