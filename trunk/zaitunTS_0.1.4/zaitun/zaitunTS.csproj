@@ -1,0 +1,1063 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4E4C6660-F867-4A32-A716-522ED4876D85}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>zaitun</RootNamespace>
+    <AssemblyName>Zaitun Time Series</AssemblyName>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <CodeAnalysisRules>-Microsoft.Usage#CA2204</CodeAnalysisRules>
+    <ApplicationIcon>zaitun.ico</ApplicationIcon>
+    <Win32Resource>
+    </Win32Resource>
+    <ManifestCertificateThumbprint>4E8CA766F89ECDDC07371ABC908090E5E8E348BF</ManifestCertificateThumbprint>
+    <ManifestKeyFile>zaftime_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <StartupObject>
+    </StartupObject>
+    <PublishUrl>D:\install\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Algebra Zaitun Time Series</ProductName>
+    <PublisherName>Algebra Corporation</PublisherName>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <BootstrapperComponentsLocation>Relative</BootstrapperComponentsLocation>
+    <BootstrapperComponentsUrl>F:\sidang\Algebra Zaitun Time Series Setup Files</BootstrapperComponentsUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Encog, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\ExcelLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="GraphLib, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\GraphLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TabStrip, Version=2.0.2523.29272, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\TabStrip.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph, Version=5.0.1.41097, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\eII\programming\Graph881\Graph881\bin\Debug\ZedGraph.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Correlogram\Computation\Boundaries.cs" />
+    <Compile Include="Correlogram\Computation\Differencing.cs" />
+    <Compile Include="Correlogram\Computation\LjungBoxQTest.cs" />
+    <Compile Include="Correlogram\Views\CorrelogramForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Correlogram\Views\CorrelogramForm.designer.cs">
+      <DependentUpon>CorrelogramForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Correlogram\Views\CorrelogramResult.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Correlogram\Views\CorrelogramResult.designer.cs">
+      <DependentUpon>CorrelogramResult.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Data on File\ExcelReader.cs" />
+    <Compile Include="Data\Data on File\ExcelWriter.cs" />
+    <Compile Include="Data\Data on File\CSVWriter.cs" />
+    <Compile Include="Data\Data on RAM\GroupComparer.cs" />
+    <Compile Include="Data\Data on RAM\GroupFinder.cs" />
+    <Compile Include="Data\Data on RAM\SeriesGroup.cs" />
+    <Compile Include="Data\Data on RAM\SeriesGroups.cs" />
+    <Compile Include="Data\Data on RAM\Exceptions.cs" />
+    <Compile Include="Data\Data on RAM\VariableComparer.cs" />
+    <Compile Include="Data\Data on RAM\VariableFinder.cs" />
+    <Compile Include="Data\Data Printing\SeriesDataPrinter.cs" />
+    <Compile Include="Decomposition\Computation\MeasuringForecastingError.cs" />
+    <Compile Include="Decomposition\Computation\SeasonalIndex.cs" />
+    <Compile Include="Decomposition\Views\DecompositionStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Decomposition\Views\DecompositionStorageForm.Designer.cs">
+      <DependentUpon>DecompositionStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Distribution\ChiSquare.cs" />
+    <Compile Include="Distribution\F.cs" />
+    <Compile Include="Distribution\Normal.cs" />
+    <Compile Include="Distribution\t.cs" />
+    <Compile Include="ExponentialSmoothing\Computation\DoubleExponentialSmoothingBrown.cs" />
+    <Compile Include="ExponentialSmoothing\Computation\DoubleExponentialSmoothingHolt.cs" />
+    <Compile Include="ExponentialSmoothing\Computation\SingleExponentialSmoothing.cs" />
+    <Compile Include="ExponentialSmoothing\Computation\TripleExponentialSmoothingWinter.cs" />
+    <Compile Include="ExponentialSmoothing\Views\ESStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\ESStorageForm.Designer.cs">
+      <DependentUpon>ESStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\SingleESOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\SingleESOptionsForm.Designer.cs">
+      <DependentUpon>SingleESOptionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovingAverage\Computation\MeasuringForecastingError.cs" />
+    <Compile Include="MovingAverage\Views\MAStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MAStorageForm.Designer.cs">
+      <DependentUpon>MAStorageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NeuralNetwork\Computation\BipolarSigmoidFunction.cs" />
+    <Compile Include="NeuralNetwork\Computation\HyperbolicTangentFunction.cs" />
+    <Compile Include="NeuralNetwork\Computation\SigmoidFunction.cs" />
+    <Compile Include="NeuralNetwork\Views\NeuralNetworkAnalysisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NeuralNetwork\Views\NeuralNetworkAnalysisForm.Designer.cs">
+      <DependentUpon>NeuralNetworkAnalysisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NeuralNetwork\Views\ANNResultTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NeuralNetwork\Views\ANNResultTabPage.Designer.cs">
+      <DependentUpon>ANNResultTabPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\ActualVsPredictedGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ActualVsPredictedGraph.Designer.cs">
+      <DependentUpon>ActualVsPredictedGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\ActualAndPredictedGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ActualAndPredictedGraph.Designer.cs">
+      <DependentUpon>ActualAndPredictedGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\ActualAndForecastedGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ActualAndForecastedGraph.Designer.cs">
+      <DependentUpon>ActualAndForecastedGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NeuralNetwork\Views\ANNModelSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NeuralNetwork\Views\ANNModelSummary.Designer.cs">
+      <DependentUpon>ANNModelSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\ActualPredictedResidualDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ActualPredictedResidualDataGrid.Designer.cs">
+      <DependentUpon>ActualPredictedResidualDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\ForecastedDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ForecastedDataGrid.Designer.cs">
+      <DependentUpon>ForecastedDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\GridToolStrip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ResidualVsPredictedGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ResidualVsPredictedGraph.Designer.cs">
+      <DependentUpon>ResidualVsPredictedGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\ResidualVsActualGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ResidualVsActualGraph.Designer.cs">
+      <DependentUpon>ResidualVsActualGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\GroupTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\GroupGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\GroupGraph.Designer.cs">
+      <DependentUpon>GroupGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\GroupDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\GroupDataGrid.Designer.cs">
+      <DependentUpon>GroupDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\ResidualGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ResidualGraph.Designer.cs">
+      <DependentUpon>ResidualGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\SeriesDataList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\SeriesDataList.Designer.cs">
+      <DependentUpon>SeriesDataList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\Validated TextBox\ValidatedNameTextBoxCell.cs" />
+    <Compile Include="GUI\Control\Validated TextBox\ValidatedNameTextBoxEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\Validated TextBox\DecimalTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\Validated TextBox\NameTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\Validated TextBox\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\Validated TextBox\ValidatedTextBoxCell.cs">
+    </Compile>
+    <Compile Include="GUI\Control\Validated TextBox\ValidatedTextBoxEditingControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\VariableDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\VariableDataGrid.Designer.cs">
+      <DependentUpon>VariableDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\VariableGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\VariableGraph.Designer.cs">
+      <DependentUpon>VariableGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\VariableStatistics.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\VariableStatistics.Designer.cs">
+      <DependentUpon>VariableStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\VariableTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\VariableViewPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\VariableViewPane.Designer.cs">
+      <DependentUpon>VariableViewPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Library\ListWithOnChanged\Exceptions.cs" />
+    <Compile Include="Data\Library\ListWithOnChanged\ListWithOnChanged.cs" />
+    <Compile Include="Data\Data on RAM\SeriesData.cs" />
+    <Compile Include="Data\Data on RAM\SeriesVariable.cs" />
+    <Compile Include="Data\Data on RAM\SeriesVariables.cs" />
+    <Compile Include="GUI\Dialog\ImportExcelDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\ImportExcelDialog.Designer.cs">
+      <DependentUpon>ImportExcelDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\DuplicateDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\DuplicateDialog.Designer.cs">
+      <DependentUpon>DuplicateDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\EditSeriesGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\EditSeriesGroup.Designer.cs">
+      <DependentUpon>EditSeriesGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\EditSeriesVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\EditSeriesVariable.Designer.cs">
+      <DependentUpon>EditSeriesVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\CreateNewProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\CreateNewProject.Designer.cs">
+      <DependentUpon>CreateNewProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\CreateSeriesGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\CreateSeriesGroup.Designer.cs">
+      <DependentUpon>CreateSeriesGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\CreateSeriesVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\CreateSeriesVariable.Designer.cs">
+      <DependentUpon>CreateSeriesVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\ImportCSVDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\ImportCSVDialog.Designer.cs">
+      <DependentUpon>ImportCSVDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\SelectAnalyzedVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\SelectAnalyzedVariable.Designer.cs">
+      <DependentUpon>SelectAnalyzedVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NeuralNetwork\Views\ANNSelectResultView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NeuralNetwork\Views\ANNSelectResultView.Designer.cs">
+      <DependentUpon>ANNSelectResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\SelectVariableDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\SelectVariableDialog.Designer.cs">
+      <DependentUpon>SelectVariableDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Dialog\TransformVariable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Dialog\TransformVariable.Designer.cs">
+      <DependentUpon>TransformVariable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Data on File\CSVReader.cs" />
+    <Compile Include="Data\Data on File\SeriesFileReader.cs" />
+    <Compile Include="Data\Data on File\SeriesFileWriter.cs" />
+    <Compile Include="GUI\Forms\DataForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\DataForm.Designer.cs">
+      <DependentUpon>DataForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\MDIForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\MDIForm.designer.cs">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\WelcomeScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\WelcomeScreen.Designer.cs">
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Forms\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatrixVector\Exceptions.cs" />
+    <Compile Include="MatrixVector\LeastSquareEstimator.cs" />
+    <Compile Include="MatrixVector\Matrix.cs" />
+    <Compile Include="MatrixVector\Vector.cs" />
+    <Compile Include="NeuralNetwork\Computation\LinearFunction.cs" />
+    <Compile Include="NeuralNetwork\Computation\SemiLinearFunction.cs" />
+    <Compile Include="Optimization\BaseFunction.cs" />
+    <Compile Include="Optimization\OptimizationAlgorithm.cs" />
+    <Compile Include="Optimization\QuasiNewton.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Correlogram\Views\CorrelogramForm.resx">
+      <DependentUpon>CorrelogramForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Correlogram\Views\CorrelogramResult.resx">
+      <DependentUpon>CorrelogramResult.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decomposition\Views\DecompositionStorageForm.resx">
+      <DependentUpon>DecompositionStorageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\ESStorageForm.resx">
+      <DependentUpon>ESStorageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\SingleESOptionsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SingleESOptionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\AboutForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovingAverage\Views\MAStorageForm.resx">
+      <DependentUpon>MAStorageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NeuralNetwork\Views\NeuralNetworkAnalysisForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NeuralNetworkAnalysisForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ActualVsPredictedGraph.resx">
+      <DependentUpon>ActualVsPredictedGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ActualAndPredictedGraph.resx">
+      <DependentUpon>ActualAndPredictedGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ActualAndForecastedGraph.resx">
+      <DependentUpon>ActualAndForecastedGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NeuralNetwork\Views\ANNModelSummary.resx">
+      <DependentUpon>ANNModelSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ActualPredictedResidualDataGrid.resx">
+      <DependentUpon>ActualPredictedResidualDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NeuralNetwork\Views\ANNResultTabPage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ANNResultTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ForecastedDataGrid.resx">
+      <DependentUpon>ForecastedDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ResidualVsPredictedGraph.resx">
+      <DependentUpon>ResidualVsPredictedGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ResidualVsActualGraph.resx">
+      <DependentUpon>ResidualVsActualGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\GroupGraph.resx">
+      <DependentUpon>GroupGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\GroupDataGrid.resx">
+      <DependentUpon>GroupDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ResidualGraph.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ResidualGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\SeriesDataList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SeriesDataList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\VariableDataGrid.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VariableDataGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\VariableGraph.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VariableGraph.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\VariableStatistics.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VariableStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\VariableTabPage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VariableTabPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\VariableViewPane.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>VariableViewPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\ImportExcelDialog.resx">
+      <DependentUpon>ImportExcelDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\DuplicateDialog.resx">
+      <DependentUpon>DuplicateDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\EditSeriesGroup.resx">
+      <DependentUpon>EditSeriesGroup.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\EditSeriesVariable.resx">
+      <DependentUpon>EditSeriesVariable.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\CreateNewProject.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CreateNewProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\CreateSeriesGroup.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CreateSeriesGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\CreateSeriesVariable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CreateSeriesVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\ImportCSVDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ImportCSVDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\SelectAnalyzedVariable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectAnalyzedVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NeuralNetwork\Views\ANNSelectResultView.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ANNSelectResultView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\SelectVariableDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectVariableDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Dialog\TransformVariable.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TransformVariable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\DataForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\MDIForm.resx">
+      <DependentUpon>MDIForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\WelcomeScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WelcomeScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Forms\SplashScreen.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ActualAndSmoothedGraph.resx">
+      <DependentUpon>ActualAndSmoothedGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Control\ActualPredictedAndTrendGraph.resx">
+      <DependentUpon>ActualPredictedAndTrendGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decomposition\Views\DECModelSummary.resx">
+      <DependentUpon>DECModelSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decomposition\Views\DecompositionDataGrid.resx">
+      <DependentUpon>DecompositionDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decomposition\Views\DECResultTabPage.resx">
+      <DependentUpon>DECResultTabPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decomposition\Views\DeseasonalGraph.resx">
+      <DependentUpon>DeseasonalGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decomposition\Views\DetrendGraph.resx">
+      <DependentUpon>DetrendGraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\DoubleExponentialSmoothingBrownDataGrid.resx">
+      <DependentUpon>DoubleExponentialSmoothingBrownDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\DoubleExponentialSmoothingHoltDataGrid.resx">
+      <DependentUpon>DoubleExponentialSmoothingHoltDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\ESModelSummary.resx">
+      <DependentUpon>ESModelSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\ESResultTabPage.resx">
+      <DependentUpon>ESResultTabPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovingAverage\Views\MAModelSummary.resx">
+      <DependentUpon>MAModelSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovingAverage\Views\MAResultTabPage.resx">
+      <DependentUpon>MAResultTabPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovingAverage\Views\MovingAverage2DataGrid.resx">
+      <DependentUpon>MovingAverage2DataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovingAverage\Views\MovingAverageDataGrid.resx">
+      <DependentUpon>MovingAverageDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\SingleExponentialSmoothingDataGrid.resx">
+      <DependentUpon>SingleExponentialSmoothingDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrendAnalysis\Views\TrendAnalysisSelectResultView.resx">
+      <DependentUpon>TrendAnalysisSelectResultView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrendAnalysis\Views\TrendAnalysisModelSummary.resx">
+      <DependentUpon>TrendAnalysisModelSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrendAnalysis\Views\TrendAnalysisResultTabPage.resx">
+      <DependentUpon>TrendAnalysisResultTabPage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\TripleExponentialSmoothingWinterDataGrid.resx">
+      <DependentUpon>TripleExponentialSmoothingWinterDataGrid.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decomposition\Views\DecompositionForm.resx">
+      <DependentUpon>DecompositionForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decomposition\Views\DecompositionSelectResultView.resx">
+      <DependentUpon>DecompositionSelectResultView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\DoubleESBrownGridSearch.resx">
+      <DependentUpon>DoubleESBrownGridSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\DoubleESHoltGridSearch.resx">
+      <DependentUpon>DoubleESHoltGridSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\ESSelectResultView.resx">
+      <DependentUpon>ESSelectResultView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\ExponentialSmoothingForm.resx">
+      <DependentUpon>ExponentialSmoothingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\SingleESGridSearch.resx">
+      <DependentUpon>SingleESGridSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExponentialSmoothing\Views\TripleESWinterGridSearch.resx">
+      <DependentUpon>TripleESWinterGridSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovingAverage\Views\MASelectResultView.resx">
+      <DependentUpon>MASelectResultView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MovingAverage\Views\MovingAverageForm.resx">
+      <DependentUpon>MovingAverageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrendAnalysis\Views\TrendAnalysisForm.resx">
+      <DependentUpon>TrendAnalysisForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrendAnalysis\Views\TrendAnalysisStorageForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TrendAnalysisStorageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="GUI\Control\ActualAndSmoothedGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ActualAndSmoothedGraph.designer.cs">
+      <DependentUpon>ActualAndSmoothedGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Control\ActualPredictedAndTrendGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Control\ActualPredictedAndTrendGraph.designer.cs">
+      <DependentUpon>ActualPredictedAndTrendGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decomposition\Views\DECModelSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Decomposition\Views\DECModelSummary.designer.cs">
+      <DependentUpon>DECModelSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decomposition\Views\DecompositionDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Decomposition\Views\DecompositionDataGrid.designer.cs">
+      <DependentUpon>DecompositionDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decomposition\Views\DECResultTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Decomposition\Views\DECResultTabPage.designer.cs">
+      <DependentUpon>DECResultTabPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decomposition\Views\DeseasonalGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Decomposition\Views\DeseasonalGraph.designer.cs">
+      <DependentUpon>DeseasonalGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decomposition\Views\DetrendGraph.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Decomposition\Views\DetrendGraph.designer.cs">
+      <DependentUpon>DetrendGraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\DoubleExponentialSmoothingBrownDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\DoubleExponentialSmoothingBrownDataGrid.designer.cs">
+      <DependentUpon>DoubleExponentialSmoothingBrownDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\DoubleExponentialSmoothingHoltDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\DoubleExponentialSmoothingHoltDataGrid.designer.cs">
+      <DependentUpon>DoubleExponentialSmoothingHoltDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\ESModelSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\ESModelSummary.designer.cs">
+      <DependentUpon>ESModelSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\ESResultTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\ESResultTabPage.designer.cs">
+      <DependentUpon>ESResultTabPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MAModelSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MAModelSummary.designer.cs">
+      <DependentUpon>MAModelSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MAResultTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MAResultTabPage.designer.cs">
+      <DependentUpon>MAResultTabPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MovingAverage2DataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MovingAverage2DataGrid.designer.cs">
+      <DependentUpon>MovingAverage2DataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MovingAverageDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MovingAverageDataGrid.designer.cs">
+      <DependentUpon>MovingAverageDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\SingleExponentialSmoothingDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\SingleExponentialSmoothingDataGrid.designer.cs">
+      <DependentUpon>SingleExponentialSmoothingDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisSelectResultView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisSelectResultView.Designer.cs">
+      <DependentUpon>TrendAnalysisSelectResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisModelSummary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisModelSummary.designer.cs">
+      <DependentUpon>TrendAnalysisModelSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisResultTabPage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisResultTabPage.designer.cs">
+      <DependentUpon>TrendAnalysisResultTabPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\TripleExponentialSmoothingWinterDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\TripleExponentialSmoothingWinterDataGrid.designer.cs">
+      <DependentUpon>TripleExponentialSmoothingWinterDataGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decomposition\Computation\DecompositionClassic.cs" />
+    <Compile Include="Decomposition\Views\DecompositionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Decomposition\Views\DecompositionForm.designer.cs">
+      <DependentUpon>DecompositionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Decomposition\Views\DecompositionSelectResultView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Decomposition\Views\DecompositionSelectResultView.designer.cs">
+      <DependentUpon>DecompositionSelectResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\DoubleESBrownGridSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\DoubleESBrownGridSearch.designer.cs">
+      <DependentUpon>DoubleESBrownGridSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\DoubleESHoltGridSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\DoubleESHoltGridSearch.designer.cs">
+      <DependentUpon>DoubleESHoltGridSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\ESSelectResultView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\ESSelectResultView.designer.cs">
+      <DependentUpon>ESSelectResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\ExponentialSmoothingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\ExponentialSmoothingForm.designer.cs">
+      <DependentUpon>ExponentialSmoothingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\SingleESGridSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\SingleESGridSearch.designer.cs">
+      <DependentUpon>SingleESGridSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\TripleESWinterGridSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Views\TripleESWinterGridSearch.designer.cs">
+      <DependentUpon>TripleESWinterGridSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExponentialSmoothing\Computation\MeasuringForecastingError.cs" />
+    <Compile Include="MovingAverage\Computation\DoubleMovingAverage.cs" />
+    <Compile Include="MovingAverage\Views\MASelectResultView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MASelectResultView.designer.cs">
+      <DependentUpon>MASelectResultView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MovingAverageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MovingAverage\Views\MovingAverageForm.designer.cs">
+      <DependentUpon>MovingAverageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MovingAverage\Computation\SingleMovingAverage.cs" />
+    <Compile Include="ExponentialSmoothing\Computation\SeasonalIndex.cs" />
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisForm.designer.cs">
+      <DependentUpon>TrendAnalysisForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisStorageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrendAnalysis\Views\TrendAnalysisStorageForm.Designer.cs">
+      <DependentUpon>TrendAnalysisStorageForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\header.png" />
+    <None Include="Resources\group.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\data view.png" />
+    <None Include="Resources\difference.png" />
+    <None Include="Resources\difference2.png" />
+    <None Include="Resources\options.png" />
+    <None Include="Resources\arima.png" />
+    <None Include="Resources\neural.png" />
+    <None Include="Resources\genetic.png" />
+    <None Include="Resources\dekomposisi.png" />
+    <None Include="Resources\moving average.png" />
+    <None Include="Resources\single ES.png" />
+    <None Include="Resources\double ES.png" />
+    <None Include="Resources\copy to.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\algebra.jpg" />
+    <None Include="Resources\acf.png" />
+    <None Include="Resources\Arch 4.png" />
+    <None Include="Resources\Arch 5.png" />
+    <None Include="Resources\Arch 51.png" />
+    <None Include="Resources\Arch 6.png" />
+    <None Include="Resources\Arch 61.png" />
+    <None Include="Resources\Check Trend Intercept.png" />
+    <None Include="Resources\algebra zaitun.jpg" />
+    <None Include="Resources\algebrazaitun.jpg" />
+    <None Include="Resources\background2.gif" />
+    <None Include="Resources\background3.gif" />
+    <None Include="Resources\background4.gif" />
+    <None Include="Resources\bg.png" />
+    <None Include="Resources\button.png" />
+    <None Include="Resources\bg2.png" />
+    <None Include="Resources\bg21.png" />
+    <None Include="Resources\bg22.png" />
+    <None Include="Resources\button1.png" />
+    <None Include="Resources\bg3.png" />
+    <None Include="Resources\button2.png" />
+    <None Include="Resources\about.jpg" />
+    <None Include="Resources\about1.jpg" />
+    <None Include="Resources\about.png" />
+    <None Include="Resources\about2.png" />
+    <None Include="Resources\button3.png" />
+    <None Include="Resources\button_selected.png" />
+    <None Include="Resources\bottom.png" />
+    <None Include="Resources\bottom1.png" />
+    <None Include="Resources\bottom2.png" />
+    <Content Include="Resources\copy.png" />
+    <Content Include="Resources\cut.png" />
+    <None Include="Resources\delete pane.png" />
+    <None Include="Resources\header.jpg" />
+    <None Include="Resources\doc.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\help1.png" />
+    <None Include="Resources\header1.png" />
+    <None Include="Resources\Garch .png" />
+    <None Include="Resources\Engle Granger2.png" />
+    <None Include="Resources\Engle Granger21.png" />
+    <None Include="Resources\Engle Granger22.png" />
+    <None Include="Resources\Engle Granger3.png" />
+    <None Include="Resources\new header.jpg" />
+    <None Include="Resources\headerstis.png" />
+    <None Include="Resources\headr.jpg" />
+    <None Include="Resources\headr1.jpg" />
+    <None Include="Resources\headr2.jpg" />
+    <None Include="Resources\headr3.jpg" />
+    <None Include="Resources\headerstis2.png" />
+    <None Include="Resources\headr4.jpg" />
+    <None Include="Resources\headerst.jpg" />
+    <None Include="Resources\headerstisss.png" />
+    <None Include="Resources\headerrrrrrr.jpg" />
+    <None Include="Resources\headerbru.jpg" />
+    <None Include="Resources\grad1.jpg" />
+    <None Include="Resources\grad2.jpg" />
+    <None Include="Resources\logozaitun.png" />
+    <None Include="Resources\filetype zft.png" />
+    <None Include="Resources\genericFolder.png" />
+    <None Include="Resources\icon1.png" />
+    <None Include="Resources\menu1.png" />
+    <None Include="Resources\menu3.png" />
+    <None Include="Resources\menudasar.png" />
+    <None Include="Resources\head.png" />
+    <None Include="Resources\genericFolder_selected1.png" />
+    <None Include="Resources\filetype zft selected1.png" />
+    <Content Include="Resources\new.png" />
+    <None Include="Resources\new1.png" />
+    <None Include="Resources\new2.png" />
+    <Content Include="Resources\open.png" />
+    <None Include="Resources\pacf.png" />
+    <None Include="Resources\Pane.png" />
+    <None Include="Resources\Pane1.png" />
+    <None Include="Resources\pane_enter.png" />
+    <Content Include="Resources\paste.png" />
+    <None Include="Resources\run.png" />
+    <None Include="Resources\result.png" />
+    <None Include="Resources\variable.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\tour.png" />
+    <None Include="Resources\tour1.png" />
+    <None Include="Resources\winter ES.png" />
+    <None Include="Resources\zftdoc.png" />
+    <None Include="Resources\zftdoc1.png" />
+    <None Include="Resources\spalsh screen2.png" />
+    <None Include="Resources\spalsh screen 2.png" />
+    <None Include="Resources\project_information.png" />
+    <None Include="Resources\project_menu.png" />
+    <None Include="Resources\variable_option.png" />
+    <None Include="Resources\variable_option1.png" />
+    <None Include="Resources\project_menu1.png" />
+    <None Include="Resources\project_menu2.png" />
+    <None Include="Resources\variable_option2.png" />
+    <None Include="Resources\variable_option21.png" />
+    <None Include="Resources\top.gif" />
+    <None Include="Resources\project_menu_enter.png" />
+    <None Include="Resources\project_information_enter.png" />
+    <None Include="Resources\top_crp.png" />
+    <None Include="Resources\top_.png" />
+    <None Include="Resources\top_1.png" />
+    <None Include="Resources\project_menu3.png" />
+    <None Include="Resources\variable_option_hover.png" />
+    <None Include="Resources\variable_view.png" />
+    <None Include="Resources\variable_view_enter.png" />
+    <Content Include="zaitun.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
