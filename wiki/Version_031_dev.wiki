@@ -1,5 +1,5 @@
 #labels Phase-Requirements
-What we want to develop
+What we want to develop in version 0.3.1
 
   *  Change from .NET 2.0 to .NET 3.5 (with Visual C# 2008 EE IDE)
   *  Add support for Windows 7
