@@ -10,3 +10,15 @@ Zaitun Time Series provides several statistics and neural networks models, and g
 This project contains the source code of Zaitun Time Series with GPL license. To download Zaitun Time Series Application please visit the official website of Zaitun Time Series. Thank you
 
 http://www.zaitunsoftware.com/
+
+## Citation
+If you use Zaitun Time Series for academic purpose, please cite our work:
+
+```
+@misc{fathony2008zaitun,
+  title={Zaitun Time Series-Time Series Analysis and Forecasting Software},
+  author={Fathony, Rizal and Wibowo, Suryono H and Kurniawan, Wawan and Hasan, Muhamad F and Sholihah, Al Maratul and Rismawaty and Amelia, Lia},
+  year={2008}
+}
+```
+
